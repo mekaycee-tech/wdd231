@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Dark Modern Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+
+    <!-- Tech Cyan & Blue Accent Gradient -->
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Rounded Squircle Base (Favicon Shape) -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)" />
+
+  <!-- Code Bracket / UI Frame Lines -->
+  <path d="M 120 180 L 70 256 L 120 332" fill="none" stroke="url(#brandGrad)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+  <path d="M 392 180 L 442 256 L 392 332" fill="none" stroke="url(#brandGrad)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+
+  <!-- Stylized Monogram "M" for Mekaycee-Tech -->
+  <g filter="url(#glow)">
+    <!-- Left Pillar -->
+    <path d="M 140 370 V 150 C 140 150, 165 140, 190 170 L 256 260 L 322 170 C 347 140, 372 150, 372 150 V 370" 
+          fill="none" 
+          stroke="url(#brandGrad)" 
+          stroke-width="44" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+    
+    <!-- UX / Code Interactive Accent Dot -->
+    <circle cx="256" cy="355" r="24" fill="#00F2FE" />
+  </g>
+</svg>
