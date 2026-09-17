@@ -1,9 +1,11 @@
 :root {
   --primary-color: #1e293b;
-  --secondary-color: #0284c7;
+  --secondary-color: #026597; /* Updated to pass WCAG AA contrast against white text (5.61:1 ratio) */
   --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --text-color: #0f172a;
+  --accent-completed: #dcfce7;
+  --border-completed: #16a34a;
   --border-color: #cbd5e1;
 }
 
@@ -17,12 +19,13 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
+/* Header & Nav */
 header {
   background-color: var(--primary-color);
-  color: #fff;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,14 +36,14 @@ header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  font-size: 1.1rem;
 }
 
 #menu-toggle {
   background: none;
   border: none;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.75rem;
   cursor: pointer;
 }
@@ -61,20 +64,28 @@ nav ul {
 nav a {
   display: block;
   padding: 0.75rem 1rem;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   border-bottom: 1px solid #475569;
+  transition: background-color 0.2s ease;
 }
 
 nav a:hover,
 nav a.active {
   background-color: var(--secondary-color);
+  color: #ffffff;
 }
 
+/* Main Content Layout */
 main {
+  padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
 }
 
 .directory-header {
@@ -93,61 +104,73 @@ main {
 .btn {
   padding: 0.5rem 1.25rem;
   border: 1px solid var(--primary-color);
-  background-color: #fff;
+  background-color: #ffffff;
   color: var(--primary-color);
   border-radius: 4px;
-  cursor: pointer;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .btn.active, .btn:hover {
   background-color: var(--primary-color);
-  color: #fff;
+  color: #ffffff;
 }
 
-/* Grid Layout View */
+/* Card & Member Layouts */
+.grid-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .grid-layout-view {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
-.member-card {
+.card, .member-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
-.member-card img {
-  max-width: 120px;
-  height: auto;
-  margin: 0.5rem 0;
+.card h2 {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.card p {
+  padding: 1rem;
+}
+
+.member-card {
+  padding: 1.25rem;
+  text-align: center;
 }
 
 .member-card h3 {
   color: var(--primary-color);
-  margin-bottom: 0.25rem;
 }
 
-.member-card p {
-  font-size: 0.9rem;
-  margin-bottom: 0.25rem;
+.member-card img {
+  max-width: 100px;
+  height: auto;
+  margin: 0.75rem 0;
 }
 
-/* List Layout View */
+/* Dynamic List View */
 .list-layout-view {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .list-layout-view .member-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   text-align: left;
   padding: 0.75rem 1rem;
 }
@@ -156,21 +179,22 @@ main {
   display: none;
 }
 
+/* Footer Styling */
 footer {
   background-color: var(--primary-color);
-  color: #fff;
+  color: #ffffff;
+  text-align: center;
   padding: 1.5rem 1rem;
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  text-align: center;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .social-links img {
@@ -178,5 +202,5 @@ footer {
 }
 
 footer p {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
