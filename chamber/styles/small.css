@@ -1,14 +1,14 @@
 :root {
-  /* Colorful Palette Theme */
+  /* Color Palette */
   --primary-color: #1e293b;        /* Deep Slate Blue */
-  --primary-accent: #026597;       /* Ocean Blue - WCAG AA compliant (5.61:1 ratio) */
-  --accent-gold: #d97706;         /* Amber Gold for Gold Members */
-  --accent-silver: #475569;       /* Slate Silver for Silver Members */
-  --accent-green: #16a34a;        /* Vibrant Emerald */
-  --bg-color: #f1f5f9;            /* Soft Tint Light Background */
-  --card-bg: #ffffff;             /* Crisp White Card Base */
-  --text-color: #0f172a;          /* High-contrast Text */
-  --border-color: #e2e8f0;        /* Light Subtle Border */
+  --primary-accent: #026597;       /* Ocean Blue (6.34:1 ratio against white) */
+  --accent-gold: #d97706;         /* Amber Gold */
+  --accent-silver: #475569;       /* Slate Silver */
+  --accent-green: #16a34a;        /* Emerald Green */
+  --bg-color: #f1f5f9;            /* Body Background */
+  --card-bg: #ffffff;             /* Card Background */
+  --text-color: #0f172a;          /* Dark Text for body and main elements */
+  --border-color: #e2e8f0;        /* Light Border */
 }
 
 * {
@@ -24,8 +24,15 @@ body {
   line-height: 1.6;
 }
 
-/* Header & Accent Bar */
+/* All general spans inside main inherit dark readable text */
+main span,
+main strong {
+  color: var(--text-color);
+}
+
+/* Header & Logo Container */
 header {
+  background-color: var(--primary-color);
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: #ffffff;
   display: flex;
@@ -41,6 +48,11 @@ header {
   gap: 0.75rem;
   font-size: 1.25rem;
   font-weight: 700;
+  color: #ffffff;
+}
+
+/* Explicitly set header spans to white on dark header */
+.logo-container span {
   color: #ffffff;
 }
 
@@ -97,7 +109,7 @@ h1 {
   padding-left: 0.75rem;
 }
 
-/* Directory Page View Toggles Header Placement */
+/* Directory Page Toggles & Headers */
 .directory-header {
   display: flex;
   flex-direction: column;
@@ -127,7 +139,7 @@ h1 {
   color: #ffffff;
 }
 
-/* Business Directory Grid View Placement */
+/* Business Directory Layouts */
 .grid-layout-view {
   display: grid;
   grid-template-columns: 1fr;
@@ -135,19 +147,13 @@ h1 {
 }
 
 .member-card {
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.25rem;
   text-align: center;
   border-top: 4px solid var(--primary-accent);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.member-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .member-card h3 {
@@ -172,7 +178,6 @@ h1 {
   text-decoration: underline;
 }
 
-/* Business Directory List View Placement */
 .list-layout-view {
   display: flex;
   flex-direction: column;
@@ -190,7 +195,7 @@ h1 {
   display: none;
 }
 
-/* Chamber Home Page Layout Extensions */
+/* Hero Section */
 .hero-container {
   position: relative;
   width: 100%;
@@ -212,7 +217,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(15, 23, 42, 0.88);
+  background-color: rgba(15, 23, 42, 0.92);
   color: #ffffff;
   padding: 1.5rem;
   text-align: center;
@@ -224,7 +229,13 @@ h1 {
 
 .cta-overlay h2 {
   color: #ffffff;
+  background: none;
+  padding: 0;
   margin-bottom: 0.5rem;
+}
+
+.cta-overlay p {
+  color: #ffffff;
 }
 
 .cta-btn {
@@ -236,17 +247,14 @@ h1 {
   text-decoration: none;
   font-weight: 700;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .cta-btn:hover {
   background-color: #024e75;
-  transform: translateY(-2px);
 }
 
 .welcome-section {
-  background: #ffffff;
+  background-color: #ffffff;
   padding: 1.25rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
@@ -255,16 +263,17 @@ h1 {
 }
 
 .card {
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
+/* Explicit background color on Card h2 to avoid 1.00:1 equal color error */
 .card h2 {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #334155 100%);
-  color: #ffffff;
+  background-color: var(--primary-color) !important;
+  color: #ffffff !important;
   padding: 0.75rem 1rem;
   font-size: 1.15rem;
   text-align: center;
@@ -332,8 +341,9 @@ h1 {
   max-width: 95px;
 }
 
-/* Footer Styling */
+/* Explicit white text on footer elements */
 footer {
+  background-color: var(--primary-color);
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: #ffffff;
   text-align: center;
@@ -355,7 +365,9 @@ footer {
   filter: invert(1);
 }
 
-footer p {
+footer p,
+footer strong,
+footer span {
   font-size: 0.9rem;
-  color: #cbd5e1;
+  color: #ffffff !important; /* Forces 14.63:1 contrast against dark footer */
 }
