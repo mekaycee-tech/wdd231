@@ -25,16 +25,21 @@ function displayCurrentWeather(data) {
   const weatherDescEl = document.getElementById("weather-desc");
   const weatherIconEl = document.getElementById("weather-icon");
 
-  currentTempEl.textContent = Math.round(data.main.temp);
+  if (currentTempEl) {
+    currentTempEl.textContent = Math.round(data.main.temp);
+  }
   
-  // Format weather description text
   const desc = data.weather[0].description;
-  weatherDescEl.textContent = desc;
+  if (weatherDescEl) {
+    weatherDescEl.textContent = desc;
+  }
 
-  // Weather Icon
-  const iconCode = data.weather[0].icon;
-  weatherIconEl.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-  weatherIconEl.alt = desc;
+  // Dynamically update the placeholder image and alt text with real OpenWeatherMap icon
+  if (weatherIconEl) {
+    const iconCode = data.weather[0].icon;
+    weatherIconEl.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    weatherIconEl.alt = desc;
+  }
 }
 
 async function fetchForecast() {
@@ -51,6 +56,8 @@ async function fetchForecast() {
 
 function displayForecast(data) {
   const forecastContainer = document.getElementById("forecast-container");
+  if (!forecastContainer) return;
+
   forecastContainer.innerHTML = "";
 
   // Filter forecast data for 12:00 PM readings across 3 distinct days
