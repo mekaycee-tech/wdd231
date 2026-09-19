@@ -1,12 +1,14 @@
 :root {
-  --primary-color: #1e293b;
-  --secondary-color: #026597; /* Updated to pass WCAG AA contrast against white text (5.61:1 ratio) */
-  --bg-color: #f8fafc;
-  --card-bg: #ffffff;
-  --text-color: #0f172a;
-  --accent-completed: #dcfce7;
-  --border-completed: #16a34a;
-  --border-color: #cbd5e1;
+  /* Colorful Palette Theme */
+  --primary-color: #1e293b;        /* Deep Slate Blue */
+  --primary-accent: #026597;       /* Ocean Blue - WCAG AA compliant (5.61:1 ratio) */
+  --accent-gold: #d97706;         /* Amber Gold for Gold Members */
+  --accent-silver: #475569;       /* Slate Silver for Silver Members */
+  --accent-green: #16a34a;        /* Vibrant Emerald */
+  --bg-color: #f1f5f9;            /* Soft Tint Light Background */
+  --card-bg: #ffffff;             /* Crisp White Card Base */
+  --text-color: #0f172a;          /* High-contrast Text */
+  --border-color: #e2e8f0;        /* Light Subtle Border */
 }
 
 * {
@@ -22,14 +24,15 @@ body {
   line-height: 1.6;
 }
 
-/* Header & Nav */
+/* Header & Accent Bar */
 header {
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  border-bottom: 4px solid var(--primary-accent);
 }
 
 .logo-container {
@@ -38,6 +41,7 @@ header {
   gap: 0.75rem;
   font-size: 1.25rem;
   font-weight: 700;
+  color: #ffffff;
 }
 
 #menu-toggle {
@@ -48,6 +52,7 @@ header {
   cursor: pointer;
 }
 
+/* Navigation Menu */
 nav {
   display: none;
   background-color: #334155;
@@ -67,16 +72,17 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   border-bottom: 1px solid #475569;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, padding-left 0.2s ease;
 }
 
 nav a:hover,
 nav a.active {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-accent);
   color: #ffffff;
+  padding-left: 1.25rem;
 }
 
-/* Main Content Layout */
+/* Main Container Layout */
 main {
   padding: 1rem;
   max-width: 1200px;
@@ -84,10 +90,14 @@ main {
 }
 
 h1 {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   font-size: 1.75rem;
+  color: var(--primary-color);
+  border-left: 5px solid var(--primary-accent);
+  padding-left: 0.75rem;
 }
 
+/* Directory Page View Toggles Header Placement */
 .directory-header {
   display: flex;
   flex-direction: column;
@@ -102,13 +112,14 @@ h1 {
 }
 
 .btn {
-  padding: 0.5rem 1.25rem;
-  border: 1px solid var(--primary-color);
+  padding: 0.6rem 1.4rem;
+  border: 2px solid var(--primary-color);
   background-color: #ffffff;
   color: var(--primary-color);
-  border-radius: 4px;
-  font-weight: 500;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btn.active, .btn:hover {
@@ -116,45 +127,33 @@ h1 {
   color: #ffffff;
 }
 
-/* Card & Member Layouts */
-.grid-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
+/* Business Directory Grid View Placement */
 .grid-layout-view {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
 }
 
-.card, .member-card {
+.member-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.card h2 {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  padding: 0.6rem 1rem;
-  font-size: 1.1rem;
-  text-align: center;
-}
-
-.card p {
-  padding: 1rem;
-}
-
-.member-card {
+  border-radius: 8px;
   padding: 1.25rem;
   text-align: center;
+  border-top: 4px solid var(--primary-accent);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .member-card h3 {
   color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
 }
 
 .member-card img {
@@ -163,7 +162,17 @@ h1 {
   margin: 0.75rem 0;
 }
 
-/* Dynamic List View */
+.member-card a {
+  color: var(--primary-accent);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.member-card a:hover {
+  text-decoration: underline;
+}
+
+/* Business Directory List View Placement */
 .list-layout-view {
   display: flex;
   flex-direction: column;
@@ -172,29 +181,174 @@ h1 {
 
 .list-layout-view .member-card {
   text-align: left;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1.2rem;
+  border-top: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-accent);
 }
 
 .list-layout-view .member-card img {
   display: none;
 }
 
-/* Footer Styling */
-footer {
-  background-color: var(--primary-color);
+/* Chamber Home Page Layout Extensions */
+.hero-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.cta-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15, 23, 42, 0.88);
   color: #ffffff;
+  padding: 1.5rem;
   text-align: center;
-  padding: 1.5rem 1rem;
-  margin-top: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 460px;
+  border-top: 4px solid var(--primary-accent);
+}
+
+.cta-overlay h2 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #024e75;
+  transform: translateY(-2px);
+}
+
+.welcome-section {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--accent-green);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #334155 100%);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.home-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.events-card .event-item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.events-card h3 {
+  color: var(--primary-accent);
+  margin-bottom: 0.25rem;
+}
+
+.weather-current {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
+  background-color: #e0f2fe;
+  border-radius: 6px;
+  margin: 1rem;
+}
+
+.weather-current .temp {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.forecast-list {
+  padding: 1rem;
+}
+
+.forecast-item {
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.spotlight-grid {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  padding: 1rem;
+}
+
+.spotlight-item {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-top: 4px solid var(--primary-accent);
+}
+
+.spotlight-item img {
+  margin: 0.75rem 0;
+  max-width: 95px;
+}
+
+/* Footer Styling */
+footer {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-top: 4px solid var(--primary-accent);
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .social-links img {
@@ -203,4 +357,5 @@ footer {
 
 footer p {
   font-size: 0.9rem;
+  color: #cbd5e1;
 }

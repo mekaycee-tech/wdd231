@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Uturu Chamber of Commerce</title>
+  <meta name="description" content="Official home of the Mekaycee-Tech Chamber of Commerce. Connecting local businesses, promoting tourism, and driving economic growth in Uturu.">
+  <meta name="author" content="Agoro, Kelechi David">
+  
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Facebook / Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mekaycee-Tech Chamber of Commerce">
+  <meta property="og:description" content="Connecting local businesses, promoting regional growth, and fostering community leadership.">
+  <meta property="og:image" content="https://kelechiagoro.github.io/wdd231/chamber/images/og-image.jpg">
+  <meta property="og:url" content="https://kelechiagoro.github.io/wdd231/chamber/index.html">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Scripts -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/spotlight.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.svg" alt="Uturu Chamber Logo" class="logo" width="40" height="40">
+      <span>Uturu Chamber of Commerce</span>
+    </div>
+    <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+  </header>
+
+  <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="directory.html">Directory</a></li>
+      <li><a href="join.html">Join</a></li>
+      <li><a href="discover.html">Discover</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Scalable Hero Banner Section -->
+    <section class="hero-container">
+      <img src="images/hero.webp" alt="Uturu Business Community and Landscape" class="hero-img" width="1200" height="500" loading="eager">
+      <div class="cta-overlay">
+        <h2>Connecting Business & Community</h2>
+        <p>Promoting economic growth, business advocacy, and community leadership across Uturu.</p>
+        <a href="join.html" class="cta-btn">Become a Member</a>
+      </div>
+    </section>
+
+    <!-- Chamber Welcome & Mission Statement -->
+    <section class="welcome-section">
+      <h1>Welcome to the Uturu Chamber of Commerce</h1>
+      <p>
+        The Uturu Chamber of Commerce serves as the catalyst for local business growth, the convener of leaders and influencers, and the champion for a stronger local economy.
+      </p>
+    </section>
+
+    <!-- Home Page Content Grid -->
+    <div class="home-grid">
+      
+      <!-- Current Events Section -->
+      <section class="card events-card">
+        <h2>Chamber Events</h2>
+        <div class="event-item">
+          <h3>Monthly Business Connection Breakfast</h3>
+          <p><strong>Date:</strong> October 12, 2026</p>
+          <p>Network with fellow local business owners and share ideas over breakfast.</p>
+        </div>
+        <div class="event-item">
+          <h3>Annual Local Commerce Summit</h3>
+          <p><strong>Date:</strong> November 05, 2026</p>
+          <p>Discover economic insights and technology strategies for small businesses.</p>
+        </div>
+      </section>
+
+      <!-- Live OpenWeatherMap API Section -->
+      <section class="card weather-card">
+        <h2>Uturu Weather</h2>
+        <div id="weather-info">
+          <div class="weather-current">
+            <img id="weather-icon" src="" alt="" width="50" height="50">
+            <div>
+              <p class="temp"><span id="current-temp">--</span>°C</p>
+              <p id="weather-desc" class="capitalize">Loading local weather...</p>
+            </div>
+          </div>
+          <hr>
+          <h3>3-Day Temperature Forecast</h3>
+          <div id="forecast-container" class="forecast-list">
+            <!-- Populated dynamically via weather.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Business Spotlights Section (2-3 Random Gold/Silver Members) -->
+      <section class="card spotlight-card">
+        <h2>Featured Member Spotlights</h2>
+        <div id="spotlight-container" class="spotlight-grid">
+          <!-- Populated dynamically via spotlight.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-info">
+      <p><strong>Uturu Chamber of Commerce</strong></p>
+      <p>Uturu Town Hall, Ukwunwangwu, Uturu, Isuikwuato L.G.A, Abia State</p>
+      <p>info@uturuchamberofcommerce.org</p>
+      <p>(+234) 800-555-0199</p>
+    </div>
+
+    <div class="social-links">
+      <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><img src="images/youtube.svg" alt="YouTube" width="24" height="24"></a>
+      <a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><img src="images/twitter.svg" alt="X" width="24" height="24"></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn" width="24" height="24"></a>
+    </div>
+
+    <div class="footer-dev">
+      <p>WDD 231 Class Project</p>
+      <p>Agoro, Kelechi David</p>
+      <p>&copy; <span id="currentyear"></span> Mekaycee-Tech</p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+</body>
+</html>
