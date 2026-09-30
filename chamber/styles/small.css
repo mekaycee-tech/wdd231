@@ -1,5 +1,5 @@
 :root {
-  /* Color Palette */
+  /* WCAG AA Compliant Color Palette */
   --primary-color: #1e293b;        /* Deep Slate Blue */
   --primary-accent: #026597;       /* Ocean Blue (6.34:1 ratio against white) */
   --accent-gold: #d97706;         /* Amber Gold */
@@ -24,7 +24,7 @@ body {
   line-height: 1.6;
 }
 
-/* All general spans inside main inherit dark readable text */
+/* Ensure general spans and strong tags in main inherit dark readable text */
 main span,
 main strong {
   color: var(--text-color);
@@ -51,9 +51,8 @@ header {
   color: #ffffff;
 }
 
-/* Explicitly set header spans to white on dark header */
 .logo-container span {
-  color: #ffffff;
+  color: #ffffff; /* Explicit white text on dark header */
 }
 
 #menu-toggle {
@@ -139,7 +138,7 @@ h1 {
   color: #ffffff;
 }
 
-/* Business Directory Layouts */
+/* Business Directory Cards */
 .grid-layout-view {
   display: grid;
   grid-template-columns: 1fr;
@@ -195,7 +194,7 @@ h1 {
   display: none;
 }
 
-/* Hero Section */
+/* Home Page Hero & Sections */
 .hero-container {
   position: relative;
   width: 100%;
@@ -270,7 +269,7 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-/* Explicit background color on Card h2 to avoid 1.00:1 equal color error */
+/* Card Heading Styling */
 .card h2 {
   background-color: var(--primary-color) !important;
   color: #ffffff !important;
@@ -341,7 +340,183 @@ h1 {
   max-width: 95px;
 }
 
-/* Explicit white text on footer elements */
+/* --- Form & Join Page Extensions --- */
+.join-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.join-form {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.join-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.25rem;
+}
+
+.join-form label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.join-form input[type="text"],
+.join-form input[type="email"],
+.join-form input[type="tel"],
+.join-form select,
+.join-form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.35rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #f8fafc;
+}
+
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+  outline: 2px solid var(--primary-accent);
+  background-color: #ffffff;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #024e75;
+}
+
+/* --- Membership Tier Cards & Load Keyframe Animation --- */
+.membership-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tier-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  /* Initial CSS Page Load Animation */
+  animation: fadeInCard 1s ease-out forwards;
+}
+
+.card-np { border-top: 5px solid #64748b; }
+.card-bronze { border-top: 5px solid #d97706; }
+.card-silver { border-top: 5px solid #94a3b8; }
+.card-gold { border-top: 5px solid #eab308; }
+
+.info-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.info-btn:hover {
+  background-color: var(--primary-accent);
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- HTML Dialog Modals --- */
+.modal {
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.modal::backdrop {
+  background-color: rgba(15, 23, 42, 0.7);
+}
+
+.modal-content {
+  padding: 1.5rem;
+  background-color: #ffffff;
+}
+
+.modal-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.modal-content ul {
+  margin: 1rem 0 1.5rem 1.25rem;
+  line-height: 1.8;
+}
+
+.close-modal {
+  padding: 0.5rem 1.25rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- Thank You Page Layout --- */
+.thankyou-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.75rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.results-display {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-left: 4px solid var(--primary-accent);
+  border-radius: 4px;
+  line-height: 2;
+}
+
+/* Footer & Explicit White Text */
 footer {
   background-color: var(--primary-color);
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -369,5 +544,5 @@ footer p,
 footer strong,
 footer span {
   font-size: 0.9rem;
-  color: #ffffff !important; /* Forces 14.63:1 contrast against dark footer */
+  color: #ffffff !important; /* Ensures 14.63:1 ratio */
 }

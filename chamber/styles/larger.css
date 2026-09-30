@@ -21,7 +21,7 @@
     padding: 0.75rem 1.5rem;
   }
 
-  /* Restored Former Directory Page Layout Placement */
+  /* Business Directory Desktop Placement */
   .directory-header {
     flex-direction: row;
     justify-content: space-between;
@@ -37,7 +37,7 @@
     align-items: center;
   }
 
-  /* Home Page Grid Extensions */
+  /* Chamber Home Page Layout Extensions */
   .home-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -51,6 +51,14 @@
   .spotlight-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Join Page Desktop Grid Layout */
+  .join-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    align-items: start;
   }
 
   footer {
