@@ -12,8 +12,8 @@
     <style>
         /* Selected Color Scheme Definitions */
         :root {
-            --primary-color: #0d1b2a;    /* Deep Navy: Used for main header, footer, primary buttons, and title text */
-            --accent-color: #0077b6;     /* Electric Blue: Used for subheadings, highlights, navigation borders, and links */
+            --primary-color: #0d1b2a;    /* Deep Navy: Used for main header, footer, primary buttons, title text */
+            --accent-color: #0077b6;     /* Electric Blue: Used for subheadings, highlights, accents, links */
             --background-color: #f8f9fa; /* Off-White: Used for body background to keep high readability */
             --card-background: #ffffff; /* Pure White: Used for content boxes and section cards */
             --text-color: #1d2d44;        /* Dark Slate: Used for main body text and paragraph descriptions */
@@ -92,7 +92,7 @@
             margin-right: 8px;
         }
 
-        /* Wireframe sketch container */
+        /* Visual Wireframe Mockups using HTML/CSS Containers */
         .wireframe-container {
             display: flex;
             flex-wrap: wrap;
@@ -100,24 +100,81 @@
             margin-top: 15px;
         }
 
-        .wireframe-box {
+        .wireframe-wrapper {
             flex: 1;
-            min-width: 250px;
-            background-color: #ffffff;
-            border: 2px dashed #999;
-            padding: 15px;
-            text-align: center;
-            border-radius: 5px;
+            min-width: 280px;
         }
 
-        .wireframe-box pre {
-            text-align: left;
-            font-family: monospace;
-            background: #f1f1f1;
+        .wf-frame {
+            border: 2px solid #555;
+            background-color: #f4f4f6;
             padding: 10px;
-            overflow-x: auto;
-            border-radius: 4px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-sizing: border-box;
+        }
+
+        .wf-block {
+            background-color: #e0e0e5;
+            border: 1px dashed #777;
+            color: #333;
+            text-align: center;
+            padding: 10px 5px;
             font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .wf-header-desktop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wf-header-desktop .wf-block {
+            padding: 8px;
+        }
+
+        .wf-hero {
+            padding: 25px 10px;
+            background-color: #d0d0d8;
+        }
+
+        .wf-desktop-content {
+            display: flex;
+            gap: 10px;
+        }
+
+        .wf-sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .wf-main-grid {
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+        }
+
+        .wf-card {
+            background-color: #ffffff;
+            border: 1px solid #bbb;
+            padding: 15px 5px;
+            text-align: center;
+            font-size: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .wf-mobile-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         footer {
@@ -194,49 +251,58 @@
 
         <!-- Wireframe Section -->
         <section>
-            <h2>Wireframe Sketches</h2>
-            <p>Basic structural layout designs for home page viewports (black & white design plan):</p>
+            <h2>Wireframe Mockups</h2>
+            <p>Basic structural layout visual designs for home page viewports:</p>
             
             <div class="wireframe-container">
-                <div class="wireframe-box">
+                <!-- Small Viewport Wireframe -->
+                <div class="wireframe-wrapper">
                     <h3>Small Viewport (Mobile)</h3>
-                    <pre>
-+-------------------------+
-|      [Logo] [≡]         |
-+-------------------------+
-| [ Search Gadgets... ]   |
-+-------------------------+
-| [ Hero Product Banner ] |
-+-------------------------+
-| Category Filters (Pills)|
-+-------------------------+
-| +---------------------+ |
-| | Product Card 1      | |
-| +---------------------+ |
-| | Product Card 2      | |
-| +---------------------+ |
-+-------------------------+
-| Footer / TechPulse      |
-+-------------------------+
-                    </pre>
+                    <div class="wf-frame">
+                        <div class="wf-block" style="display: flex; justify-content: space-between;">
+                            <span>[ Logo ]</span>
+                            <span>[ ≡ Menu ]</span>
+                        </div>
+                        <div class="wf-block">[ Search Gadgets... ]</div>
+                        <div class="wf-block wf-hero">Hero Product Banner</div>
+                        <div class="wf-block">[ Category Filter Pills ]</div>
+                        <div class="wf-mobile-cards">
+                            <div class="wf-card">Product Card 1</div>
+                            <div class="wf-card">Product Card 2</div>
+                            <div class="wf-card">Product Card 3</div>
+                        </div>
+                        <div class="wf-block">Footer / TechPulse</div>
+                    </div>
                 </div>
 
-                <div class="wireframe-box">
+                <!-- Large Viewport Wireframe -->
+                <div class="wireframe-wrapper">
                     <h3>Large Viewport (Desktop)</h3>
-                    <pre>
-+-------------------------------------------------+
-| [Logo] TechPulse   [Search...]   Home Shop Cart |
-+-------------------------------------------------+
-| [          Featured Hero Banner               ] |
-+-------------------------------------------------+
-| Categories | Products Grid                      |
-| [ ] Apple  | +----------+ +----------+ +------+ |
-| [ ] Win    | | Gadget 1 | | Gadget 2 | | G3   | |
-| [ ] Android| +----------+ +----------+ +------+ |
-+------------+------------------------------------+
-| Footer / Copyright Mekaycee-Tech                |
-+-------------------------------------------------+
-                    </pre>
+                    <div class="wf-frame">
+                        <div class="wf-header-desktop">
+                            <div class="wf-block" style="flex:1;">[ TechPulse Logo ]</div>
+                            <div class="wf-block" style="flex:2;">[ Search Bar... ]</div>
+                            <div class="wf-block" style="flex:1;">Nav Links / Cart</div>
+                        </div>
+                        <div class="wf-block wf-hero">Featured Hero Product Banner</div>
+                        <div class="wf-desktop-content">
+                            <div class="wf-sidebar">
+                                <div class="wf-block">Categories</div>
+                                <div class="wf-card">Apple</div>
+                                <div class="wf-card">Windows</div>
+                                <div class="wf-card">Android</div>
+                            </div>
+                            <div class="wf-main-grid">
+                                <div class="wf-card">Gadget 1</div>
+                                <div class="wf-card">Gadget 2</div>
+                                <div class="wf-card">Gadget 3</div>
+                                <div class="wf-card">Gadget 4</div>
+                                <div class="wf-card">Gadget 5</div>
+                                <div class="wf-card">Gadget 6</div>
+                            </div>
+                        </div>
+                        <div class="wf-block">Footer / Copyright Mekaycee-Tech</div>
+                    </div>
                 </div>
             </div>
         </section>
