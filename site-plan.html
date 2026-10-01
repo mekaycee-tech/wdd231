@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Plan: TechPulse Electronics</title>
+    <!-- Google Fonts import for typography requirements -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Selected Color Scheme Definitions */
+        :root {
+            --primary-color: #0d1b2a;    /* Deep Navy: Used for main header, footer, primary buttons, and title text */
+            --accent-color: #0077b6;     /* Electric Blue: Used for subheadings, highlights, navigation borders, and links */
+            --background-color: #f8f9fa; /* Off-White: Used for body background to keep high readability */
+            --card-background: #ffffff; /* Pure White: Used for content boxes and section cards */
+            --text-color: #1d2d44;        /* Dark Slate: Used for main body text and paragraph descriptions */
+        }
+
+        /* Typography Definitions */
+        body {
+            font-family: 'Inter', sans-serif; /* Body font for standard paragraphs and descriptions */
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif; /* Heading font for section titles and site headers */
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .meta-info {
+            font-size: 0.95rem;
+            color: #e0e1dd;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: var(--card-background);
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--background-color);
+            padding-bottom: 8px;
+            color: var(--accent-color);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .color-box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            margin-right: 8px;
+        }
+
+        /* Wireframe sketch container */
+        .wireframe-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .wireframe-box {
+            flex: 1;
+            min-width: 250px;
+            background-color: #ffffff;
+            border: 2px dashed #999;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .wireframe-box pre {
+            text-align: left;
+            font-family: monospace;
+            background: #f1f1f1;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TechPulse Electronics Site Plan</h1>
+        <div class="meta-info">
+            <p><strong>Student Name:</strong> Agoro, Kelechi David | <strong>Business/Dev Brand:</strong> Mekaycee-Tech</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Site Name Section -->
+        <section>
+            <h2>Site Name</h2>
+            <p><strong>Site Name:</strong> TechPulse Electronics</p>
+            <p><strong>Reason Selected:</strong> The name "TechPulse" combines technology and energy/momentum ("pulse")[cite: 1]. It signals a modern, dynamic web store dedicated to fast-moving electronics, genuine gadgets, and quick updates on products and tech specs for customers[cite: 1].</p>
+            <p><strong>Optional Domain:</strong> techpulseelectronics.org</p>
+        </section>
+
+        <!-- Site Purpose Section -->
+        <section>
+            <h2>Site Purpose</h2>
+            <p>The purpose of TechPulse Electronics is to provide a modern, easy-to-use e-commerce store where tech enthusiasts, students, and professionals can browse, search, and compare genuine laptops, smartphones, and accessories[cite: 1]. The site provides quick filtering, instant live search, clear specification details, dynamic local storage cart management, and dynamic tech news updates through external API integration[cite: 1].</p>
+        </section>
+
+        <!-- Target Audience Scenarios -->
+        <section>
+            <h2>Scenarios</h2>
+            <ul>
+                <li><strong>Scenario 1:</strong> "I am a computer science student looking for a high-performance laptop within my budget. How can I filter products by budget and specs to find the best match quickly?"</li>
+                <li><strong>Scenario 2:</strong> "I want to purchase a smartphone and an accessory. How do I add them to my cart, check total pricing, and ensure my selections stay saved even if I reload the browser page?"</li>
+            </ul>
+        </section>
+
+        <!-- Color Scheme -->
+        <section>
+            <h2>Color Scheme</h2>
+            <p>This site plan document uses the chosen project colors exclusively:</p>
+            <ul>
+                <li>
+                    <span class="color-box" style="background-color: #0d1b2a;"></span>
+                    <strong>Deep Navy (#0d1b2a):</strong> Primary site color used for main page headers, site title background, footer, and primary call-to-action buttons.
+                </li>
+                <li>
+                    <span class="color-box" style="background-color: #0077b6;"></span>
+                    <strong>Electric Blue (#0077b6):</strong> Accent color used for section headings, border accents, highlights, hover states, and dynamic links.
+                </li>
+                <li>
+                    <span class="color-box" style="background-color: #f8f9fa;"></span>
+                    <strong>Off-White (#f8f9fa):</strong> Main page body background color to ensure strong visual contrast and soft viewing comfort.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Typography Section -->
+        <section>
+            <h2>Typography</h2>
+            <p>The site uses two Google Fonts to keep the design clean and modern:</p>
+            <ul>
+                <li><strong>Heading Font:</strong> <code>Montserrat</code> (Bold, sans-serif) - Used for major section headers (H1, H2, H3) and product titles to give a clear, tech-focused look.</li>
+                <li><strong>Body Font:</strong> <code>Inter</code> (Regular, sans-serif) - Used for paragraph descriptions, specs, lists, navigation elements, and form input controls for readability.</li>
+            </ul>
+        </section>
+
+        <!-- Wireframe Section -->
+        <section>
+            <h2>Wireframe Sketches</h2>
+            <p>Basic structural layout designs for home page viewports (black & white design plan):</p>
+            
+            <div class="wireframe-container">
+                <div class="wireframe-box">
+                    <h3>Small Viewport (Mobile)</h3>
+                    <pre>
++-------------------------+
+|      [Logo] [≡]         |
++-------------------------+
+| [ Search Gadgets... ]   |
++-------------------------+
+| [ Hero Product Banner ] |
++-------------------------+
+| Category Filters (Pills)|
++-------------------------+
+| +---------------------+ |
+| | Product Card 1      | |
+| +---------------------+ |
+| | Product Card 2      | |
+| +---------------------+ |
++-------------------------+
+| Footer / TechPulse      |
++-------------------------+
+                    </pre>
+                </div>
+
+                <div class="wireframe-box">
+                    <h3>Large Viewport (Desktop)</h3>
+                    <pre>
++-------------------------------------------------+
+| [Logo] TechPulse   [Search...]   Home Shop Cart |
++-------------------------------------------------+
+| [          Featured Hero Banner               ] |
++-------------------------------------------------+
+| Categories | Products Grid                      |
+| [ ] Apple  | +----------+ +----------+ +------+ |
+| [ ] Win    | | Gadget 1 | | Gadget 2 | | G3   | |
+| [ ] Android| +----------+ +----------+ +------+ |
++------------+------------------------------------+
+| Footer / Copyright Mekaycee-Tech                |
++-------------------------------------------------+
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mekaycee-Tech | TechPulse Electronics Project Site Plan</p>
+    </footer>
+
+</body>
+</html>
