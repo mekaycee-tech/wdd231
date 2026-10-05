@@ -1,4 +1,29 @@
-@media (min-width: 768px) {
+/* --- Medium Screens (641px to 1024px) --- */
+@media (min-width: 641px) {
+  /* Discover Page Medium Named Grid Areas (2 Columns) */
+  .discover-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "c1 c2"
+      "c3 c4"
+      "c5 c6"
+      "c7 c8";
+  }
+
+  /* Desktop Image Hover Effect (Filtered Zoom + Shadow) */
+  .discover-card img {
+    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .discover-card figure:hover img {
+    transform: scale(1.06);
+    filter: brightness(1.08) contrast(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* --- Large Desktop Screens (1025px and above) --- */
+@media (min-width: 1025px) {
   #menu-toggle {
     display: none;
   }
@@ -21,7 +46,17 @@
     padding: 0.75rem 1.5rem;
   }
 
-  /* Business Directory Desktop Placement */
+  /* Discover Page Large Named Grid Areas (Asymmetric 3-Column Layout) */
+  .discover-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "c1 c2 c3"
+      "c4 c4 c5"
+      "c6 c7 c5"
+      "c8 c8 c8";
+  }
+
+  /* Directory Page Desktop Placement */
   .directory-header {
     flex-direction: row;
     justify-content: space-between;
@@ -37,7 +72,7 @@
     align-items: center;
   }
 
-  /* Chamber Home Page Layout Extensions */
+  /* Home Page Layout */
   .home-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

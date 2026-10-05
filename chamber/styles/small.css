@@ -1,7 +1,7 @@
 :root {
   /* WCAG AA Compliant Color Palette */
   --primary-color: #1e293b;        /* Deep Slate Blue */
-  --primary-accent: #026597;       /* Ocean Blue (6.34:1 ratio against white) */
+  --primary-accent: #026597;       /* Ocean Blue */
   --accent-gold: #d97706;         /* Amber Gold */
   --accent-silver: #475569;       /* Slate Silver */
   --accent-green: #16a34a;        /* Emerald Green */
@@ -24,7 +24,6 @@ body {
   line-height: 1.6;
 }
 
-/* Ensure general spans and strong tags in main inherit dark readable text */
 main span,
 main strong {
   color: var(--text-color);
@@ -52,7 +51,7 @@ header {
 }
 
 .logo-container span {
-  color: #ffffff; /* Explicit white text on dark header */
+  color: #ffffff;
 }
 
 #menu-toggle {
@@ -108,7 +107,98 @@ h1 {
   padding-left: 0.75rem;
 }
 
-/* Directory Page Toggles & Headers */
+/* --- Visitor Message Banner (localStorage) --- */
+.visit-banner {
+  background-color: #e0f2fe;
+  color: var(--primary-color);
+  border-left: 5px solid var(--primary-accent);
+  padding: 0.85rem 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* --- Discover Page Named Grid Areas (Small Screens: Single Column Stack) --- */
+.discover-container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "c1"
+    "c2"
+    "c3"
+    "c4"
+    "c5"
+    "c6"
+    "c7"
+    "c8";
+}
+
+.discover-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 4px solid var(--primary-accent);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.discover-card h2 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  background: none !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.discover-card figure {
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.discover-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+}
+
+.discover-card address {
+  font-style: normal;
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: var(--primary-accent);
+  margin: 0.35rem 0;
+}
+
+.discover-card p {
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.learn-btn {
+  align-self: start;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.learn-btn:hover {
+  background-color: var(--primary-accent);
+}
+
+/* Directory Page Layouts */
 .directory-header {
   display: flex;
   flex-direction: column;
@@ -138,7 +228,6 @@ h1 {
   color: #ffffff;
 }
 
-/* Business Directory Cards */
 .grid-layout-view {
   display: grid;
   grid-template-columns: 1fr;
@@ -269,7 +358,6 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-/* Card Heading Styling */
 .card h2 {
   background-color: var(--primary-color) !important;
   color: #ffffff !important;
@@ -340,7 +428,7 @@ h1 {
   max-width: 95px;
 }
 
-/* --- Form & Join Page Extensions --- */
+/* Join Page Styles */
 .join-container {
   display: flex;
   flex-direction: column;
@@ -408,7 +496,6 @@ h1 {
   background-color: #024e75;
 }
 
-/* --- Membership Tier Cards & Load Keyframe Animation --- */
 .membership-cards {
   display: flex;
   flex-direction: column;
@@ -422,7 +509,6 @@ h1 {
   padding: 1.25rem;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  /* Initial CSS Page Load Animation */
   animation: fadeInCard 1s ease-out forwards;
 }
 
@@ -457,7 +543,7 @@ h1 {
   }
 }
 
-/* --- HTML Dialog Modals --- */
+/* Dialog Modals */
 .modal {
   margin: auto;
   padding: 0;
@@ -497,7 +583,7 @@ h1 {
   cursor: pointer;
 }
 
-/* --- Thank You Page Layout --- */
+/* Thank You Page */
 .thankyou-card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -516,7 +602,7 @@ h1 {
   line-height: 2;
 }
 
-/* Footer & Explicit White Text */
+/* Footer Styling */
 footer {
   background-color: var(--primary-color);
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -544,5 +630,5 @@ footer p,
 footer strong,
 footer span {
   font-size: 0.9rem;
-  color: #ffffff !important; /* Ensures 14.63:1 ratio */
+  color: #ffffff !important;
 }
