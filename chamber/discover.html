@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://mekaycee-tech.github.io/wdd231/chamber/images/og-image.jpg">
   <meta property="og:url" content="https://mekaycee-tech.github.io/wdd231/chamber/discover.html">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -25,11 +25,12 @@
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
-  <!-- Scripts -->
+  <!-- Standard Scripts -->
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/dates.js" defer></script>
-  <!-- Note type="module" required for ES6 import -->
-  <script type="module" src="scripts/discover.js" defer></script>
+  
+  <!-- FIX 1: Removed 'defer' attribute from module script to fix W3C Error -->
+  <script type="module" src="scripts/discover.js"></script>
 </head>
 <body>
 
@@ -54,13 +55,12 @@
     <h1>Discover Uturu</h1>
 
     <!-- Visitor Message Banner (localStorage) -->
-    <div id="visit-message" class="visit-banner" role="status">
-      <!-- Populated dynamically via discover.js -->
-    </div>
+    <div id="visit-message" class="visit-banner" role="status"></div>
 
-    <!-- Discover Items Container with Named Grid Areas -->
+    <!-- FIX 2: Added heading to section to fix W3C Warning -->
     <section id="discover-grid" class="discover-container">
-      <!-- 8 Cards built dynamically from discover.mjs -->
+      <h2 class="sr-only">Points of Interest in Uturu</h2>
+      <!-- 8 Cards populated via discover.js -->
     </section>
   </main>
 

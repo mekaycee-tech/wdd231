@@ -1,14 +1,17 @@
 :root {
-  /* WCAG AA Compliant Color Palette */
-  --primary-color: #1e293b;        /* Deep Slate Blue */
-  --primary-accent: #026597;       /* Ocean Blue */
-  --accent-gold: #d97706;         /* Amber Gold */
-  --accent-silver: #475569;       /* Slate Silver */
-  --accent-green: #16a34a;        /* Emerald Green */
-  --bg-color: #f1f5f9;            /* Body Background */
-  --card-bg: #ffffff;             /* Card Background */
-  --text-color: #0f172a;          /* Dark Text for body and main elements */
-  --border-color: #e2e8f0;        /* Light Border */
+  /* Standardized Hex Color Palette */
+  --primary-color: #1e293b;
+  --primary-accent: #026597;
+  --accent-gold: #d97706;
+  --accent-silver: #475569;
+  --accent-green: #16a34a;
+  --bg-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --text-color: #0f172a;
+  --border-color: #e2e8f0;
+  --white: #ffffff;
+  --nav-bg: #334155;
+  --overlay-bg: #0f172ae0; /* Hex with alpha channel replaces rgba */
 }
 
 * {
@@ -24,16 +27,22 @@ body {
   line-height: 1.6;
 }
 
-main span,
-main strong {
-  color: var(--text-color);
+/* Accessibility Class for Screen Readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-/* Header & Logo Container */
+/* Header & Logo */
 header {
   background-color: var(--primary-color);
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #ffffff;
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,25 +56,21 @@ header {
   gap: 0.75rem;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #ffffff;
-}
-
-.logo-container span {
-  color: #ffffff;
+  color: var(--white);
 }
 
 #menu-toggle {
-  background: none;
-  border: none;
-  color: #ffffff;
+  background: transparent;
+  border: transparent;
+  color: var(--white);
   font-size: 1.75rem;
   cursor: pointer;
 }
 
-/* Navigation Menu */
+/* Navigation */
 nav {
   display: none;
-  background-color: #334155;
+  background-color: var(--nav-bg);
 }
 
 nav.open {
@@ -79,20 +84,19 @@ nav ul {
 nav a {
   display: block;
   padding: 0.75rem 1rem;
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
-  border-bottom: 1px solid #475569;
+  border-bottom: 1px solid var(--accent-silver);
   transition: background-color 0.2s ease, padding-left 0.2s ease;
 }
 
 nav a:hover,
 nav a.active {
   background-color: var(--primary-accent);
-  color: #ffffff;
   padding-left: 1.25rem;
 }
 
-/* Main Container Layout */
+/* Main Layout */
 main {
   padding: 1rem;
   max-width: 1200px;
@@ -107,7 +111,7 @@ h1 {
   padding-left: 0.75rem;
 }
 
-/* --- Hero Section & Responsive Overlay Fixes --- */
+/* Hero Section */
 .hero-container {
   position: relative;
   width: 100%;
@@ -115,7 +119,6 @@ h1 {
   margin-bottom: 1.5rem;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   background-color: var(--primary-color);
 }
 
@@ -132,32 +135,26 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(15, 23, 42, 0.88);
-  color: #ffffff;
+  background-color: var(--overlay-bg);
+  color: var(--white);
   padding: 0.85rem 0.75rem;
   text-align: center;
   border-radius: 6px;
   width: 92%;
   max-width: 420px;
   border-top: 3px solid var(--primary-accent);
-  box-sizing: border-box;
 }
 
 .cta-overlay h2 {
-  color: #ffffff !important;
-  background: none !important;
-  padding: 0 !important;
-  margin-bottom: 0.35rem !important;
-  font-size: 1.1rem !important;
+  color: var(--white);
+  font-size: 1.1rem;
   line-height: 1.25;
-  text-align: center !important;
-  border: none !important;
+  margin-bottom: 0.35rem;
 }
 
 .cta-overlay p {
-  color: #f1f5f9 !important;
+  color: var(--bg-color);
   font-size: 0.82rem;
-  line-height: 1.35;
   margin-bottom: 0.6rem;
 }
 
@@ -165,19 +162,14 @@ h1 {
   display: inline-block;
   padding: 0.45rem 1rem;
   background-color: var(--primary-accent);
-  color: #ffffff !important;
+  color: var(--white);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 700;
   border-radius: 4px;
-  transition: background-color 0.2s ease;
 }
 
-.cta-btn:hover {
-  background-color: #024e75;
-}
-
-/* --- Visitor Message Banner (localStorage) --- */
+/* Visitor Message Banner */
 .visit-banner {
   background-color: #e0f2fe;
   color: var(--primary-color);
@@ -186,10 +178,9 @@ h1 {
   margin-bottom: 1.5rem;
   border-radius: 6px;
   font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-/* --- Discover Page Named Grid Areas (Small Screens) --- */
+/* Discover Grid Areas */
 .discover-container {
   display: grid;
   gap: 1.5rem;
@@ -213,16 +204,12 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   border-top: 4px solid var(--primary-accent);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .discover-card h2 {
   font-size: 1.2rem;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
-  background: none !important;
-  padding: 0 !important;
-  text-align: left !important;
 }
 
 .discover-card figure {
@@ -242,7 +229,7 @@ h1 {
 .discover-card address {
   font-style: normal;
   font-size: 0.88rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--primary-accent);
   margin: 0.35rem 0;
 }
@@ -256,16 +243,11 @@ h1 {
   align-self: start;
   padding: 0.5rem 1.2rem;
   background-color: var(--primary-color);
-  color: #ffffff;
-  border: none;
+  color: var(--white);
+  border: transparent;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.learn-btn:hover {
-  background-color: var(--primary-accent);
 }
 
 /* Directory Page Layouts */
@@ -285,17 +267,16 @@ h1 {
 .btn {
   padding: 0.6rem 1.4rem;
   border: 2px solid var(--primary-color);
-  background-color: #ffffff;
+  background-color: var(--white);
   color: var(--primary-color);
   border-radius: 6px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .btn.active, .btn:hover {
   background-color: var(--primary-color);
-  color: #ffffff;
+  color: var(--white);
 }
 
 .grid-layout-view {
@@ -311,7 +292,6 @@ h1 {
   padding: 1.25rem;
   text-align: center;
   border-top: 4px solid var(--primary-accent);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .member-card h3 {
@@ -328,12 +308,8 @@ h1 {
 
 .member-card a {
   color: var(--primary-accent);
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
-}
-
-.member-card a:hover {
-  text-decoration: underline;
 }
 
 .list-layout-view {
@@ -354,12 +330,11 @@ h1 {
 }
 
 .welcome-section {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 1.25rem;
   border-radius: 8px;
   margin-bottom: 1.5rem;
   border-left: 5px solid var(--accent-green);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .card {
@@ -367,12 +342,11 @@ h1 {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .card h2 {
-  background-color: var(--primary-color) !important;
-  color: #ffffff !important;
+  background-color: var(--primary-color);
+  color: var(--white);
   padding: 0.75rem 1rem;
   font-size: 1.15rem;
   text-align: center;
@@ -431,7 +405,7 @@ h1 {
   border-radius: 8px;
   padding: 1.25rem;
   text-align: center;
-  background-color: #ffffff;
+  background-color: var(--white);
   border-top: 4px solid var(--primary-accent);
 }
 
@@ -440,7 +414,7 @@ h1 {
   max-width: 95px;
 }
 
-/* Join Page Styles */
+/* Join Form Styles */
 .join-container {
   display: flex;
   flex-direction: column;
@@ -453,7 +427,6 @@ h1 {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .join-form h2 {
@@ -484,34 +457,16 @@ h1 {
   background-color: #f8fafc;
 }
 
-.join-form input:focus,
-.join-form select:focus,
-.join-form textarea:focus {
-  outline: 2px solid var(--primary-accent);
-  background-color: #ffffff;
-}
-
 .submit-btn {
   width: 100%;
   padding: 0.85rem;
   background-color: var(--primary-accent);
-  color: #ffffff;
-  border: none;
+  color: var(--white);
+  border: transparent;
   border-radius: 6px;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.submit-btn:hover {
-  background-color: #024e75;
-}
-
-.membership-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
 }
 
 .tier-card {
@@ -520,8 +475,6 @@ h1 {
   border-radius: 8px;
   padding: 1.25rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  animation: fadeInCard 1s ease-out forwards;
 }
 
 .card-np { border-top: 5px solid #64748b; }
@@ -533,92 +486,42 @@ h1 {
   margin-top: 1rem;
   padding: 0.5rem 1.2rem;
   background-color: var(--primary-color);
-  color: #ffffff;
-  border: none;
+  color: var(--white);
+  border: transparent;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
 }
 
-.info-btn:hover {
-  background-color: var(--primary-accent);
-}
-
-@keyframes fadeInCard {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Dialog Modals */
+/* Modals & Dialogs */
 .modal {
   margin: auto;
   padding: 0;
-  border: none;
+  border: transparent;
   border-radius: 8px;
   max-width: 500px;
   width: 90%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-.modal::backdrop {
-  background-color: rgba(15, 23, 42, 0.7);
 }
 
 .modal-content {
   padding: 1.5rem;
-  background-color: #ffffff;
-}
-
-.modal-content h3 {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.modal-content ul {
-  margin: 1rem 0 1.5rem 1.25rem;
-  line-height: 1.8;
+  background-color: var(--white);
 }
 
 .close-modal {
   padding: 0.5rem 1.25rem;
   background-color: var(--primary-color);
-  color: #ffffff;
-  border: none;
+  color: var(--white);
+  border: transparent;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
 }
 
-/* Thank You Page */
-.thankyou-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.75rem;
-  margin-top: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.results-display {
-  margin-top: 1.25rem;
-  padding: 1rem;
-  background-color: #f8fafc;
-  border-left: 4px solid var(--primary-accent);
-  border-radius: 4px;
-  line-height: 2;
-}
-
-/* Footer Styling */
+/* Footer */
 footer {
   background-color: var(--primary-color);
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #ffffff;
+  color: var(--white);
   text-align: center;
   padding: 2rem 1rem;
   margin-top: 2.5rem;
@@ -642,5 +545,5 @@ footer p,
 footer strong,
 footer span {
   font-size: 0.9rem;
-  color: #ffffff !important;
+  color: var(--white);
 }
