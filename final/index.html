@@ -6,8 +6,11 @@
   <title>TechPulse Electronics | Home & Store</title>
   <meta name="description" content="Explore high-quality smartphones, laptops, and tech accessories at TechPulse Electronics. Best deals on modern gadgets.">
   <meta name="author" content="Agoro Kelechi David">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
+  <!-- Integrated Favicon Reference -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="TechPulse Electronics - Modern Gadgets Hub">
   <meta property="og:type" content="website">
@@ -20,7 +23,7 @@
 
   <header>
     <div class="brand">
-      <h1>TechPulse</h1>
+      <img src="images/logo.svg" alt="TechPulse Electronics Logo" width="200" height="60" class="site-logo">
     </div>
     <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">☰</button>
     <nav>
@@ -35,25 +38,25 @@
   <main>
     <section class="hero">
       <h2>Welcome to TechPulse Electronics</h2>
-      <p>Discover latest computing devices, accessories, and mobile hardware.</p>
+      <p>Discover the latest laptops, smartphones (Infinix, TECNO, Pixel, iPhone, Samsung), and tech accessories.</p>
     </section>
 
     <section class="controls">
-      <input type="text" id="search-input" placeholder="Search gadgets...">
+      <input type="text" id="search-input" placeholder="Search gadgets, brands...">
       <select id="category-filter">
         <option value="All">All Categories</option>
         <option value="Apple">Apple</option>
-        <option value="Android">Android</option>
-        <option value="Windows">Windows</option>
+        <option value="Android">Android (Infinix, TECNO, Pixel, Samsung)</option>
+        <option value="Windows">Windows / Laptops</option>
         <option value="Accessories">Accessories</option>
       </select>
     </section>
 
     <section class="product-grid" id="product-container">
-      <!-- Dynamic Products will be loaded here via JS -->
+      <!-- Dynamic Products loaded via JS -->
     </section>
 
-    <!-- Modal Dialog structure for detailed info -->
+    <!-- Modal Dialog -->
     <dialog id="product-modal">
       <h3 id="modal-title"></h3>
       <p id="modal-category" style="font-weight: bold; color: var(--accent-color);"></p>

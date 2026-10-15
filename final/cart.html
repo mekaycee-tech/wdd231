@@ -6,8 +6,11 @@
   <title>TechPulse Electronics | Your Cart</title>
   <meta name="description" content="View items added to your cart, check total price, and manage saved local items.">
   <meta name="author" content="Agoro Kelechi David">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   
+  <!-- Integrated Favicon Reference -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
+
   <meta property="og:title" content="TechPulse Cart">
   <meta property="og:type" content="website">
   
@@ -18,7 +21,7 @@
 
   <header>
     <div class="brand">
-      <h1>TechPulse</h1>
+      <img src="images/logo.svg" alt="TechPulse Electronics Logo" width="200" height="60" class="site-logo">
     </div>
     <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">☰</button>
     <nav>
@@ -33,7 +36,7 @@
   <main>
     <h2>Your Shopping Cart</h2>
     <div class="cart-list" id="cart-container">
-      <!-- Saved cart items rendered dynamically from Local Storage -->
+      <!-- Cart items loaded dynamically -->
     </div>
   </main>
 

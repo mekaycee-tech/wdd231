@@ -41,9 +41,12 @@ header {
   gap: 0.5rem;
 }
 
-.brand h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+/* Integrated Logo & Brand Header Styling */
+.site-logo {
+  max-height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .hamburger {
@@ -161,6 +164,7 @@ main {
   cursor: pointer;
   margin-top: 0.5rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .btn:hover {
