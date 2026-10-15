@@ -24,7 +24,7 @@ body {
   min-height: 100vh;
 }
 
-/* Header & Navigation */
+/* Header & Navigation Structure */
 header {
   background-color: var(--primary-color);
   color: var(--light-text);
@@ -80,13 +80,12 @@ nav ul li a {
   font-weight: 600;
 }
 
-/* Wayfinding Indicator */
 nav ul li a.active {
   border-bottom: 3px solid #ffb703;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Main Layout Structure */
+/* Main Content Structure */
 main {
   flex: 1;
   padding: 1.5rem;
@@ -124,7 +123,13 @@ h1 {
   font-size: 1rem;
 }
 
-/* Responsive Grid */
+.product-catalog h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Product Cards & Grid Base */
 .product-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -176,7 +181,7 @@ h1 {
   background-color: #003f66;
 }
 
-/* Modal Styling */
+/* Modal Dialog */
 dialog {
   margin: auto;
   padding: 1.5rem;
@@ -199,7 +204,7 @@ dialog::backdrop {
   margin: 1rem 0;
 }
 
-/* Cart & Form Styling */
+/* Forms & Cart */
 .cart-list, .form-container {
   background: var(--card-bg);
   padding: 1.5rem;
@@ -231,7 +236,7 @@ dialog::backdrop {
   border-radius: 4px;
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
   background-color: var(--primary-color);
   color: var(--light-text);
@@ -242,27 +247,4 @@ footer {
 
 footer a {
   color: #80ed99;
-}
-
-/* Media Queries */
-@media (min-width: 768px) {
-  .hamburger {
-    display: none;
-  }
-
-  nav ul {
-    display: flex;
-    position: static;
-    flex-direction: row;
-    width: auto;
-    background: none;
-  }
-
-  nav ul li a {
-    padding: 0.5rem 1rem;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

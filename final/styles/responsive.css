@@ -1,0 +1,36 @@
+/* Responsive Viewport Styles & Media Queries */
+
+/* Tablet & Desktop Layouts (768px and wider) */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  nav ul {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    background: none;
+  }
+
+  nav ul li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large Screens (1024px and wider) */
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .controls input {
+    min-width: 300px;
+  }
+}
