@@ -24,7 +24,7 @@ body {
   min-height: 100vh;
 }
 
-/* Header & Responsive Navigation */
+/* Header & Navigation */
 header {
   background-color: var(--primary-color);
   color: var(--light-text);
@@ -41,7 +41,6 @@ header {
   gap: 0.5rem;
 }
 
-/* Integrated Logo & Brand Header Styling */
 .site-logo {
   max-height: 50px;
   width: auto;
@@ -96,6 +95,12 @@ main {
   width: 100%;
 }
 
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
 .hero {
   background-color: #e0e1dd;
   padding: 2rem;
@@ -119,7 +124,7 @@ main {
   font-size: 1rem;
 }
 
-/* Responsive Grid for Products */
+/* Responsive Grid */
 .product-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -171,7 +176,7 @@ main {
   background-color: #003f66;
 }
 
-/* Modal Dialog */
+/* Modal Styling */
 dialog {
   margin: auto;
   padding: 1.5rem;
@@ -183,6 +188,15 @@ dialog {
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.6);
+}
+
+.category-tag {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.modal-desc {
+  margin: 1rem 0;
 }
 
 /* Cart & Form Styling */
@@ -230,14 +244,14 @@ footer a {
   color: #80ed99;
 }
 
-/* Responsive Media Queries (Desktop Layouts) */
+/* Media Queries */
 @media (min-width: 768px) {
   .hamburger {
     display: none;
   }
 
   nav ul {
-    display: flex !important;
+    display: flex;
     position: static;
     flex-direction: row;
     width: auto;

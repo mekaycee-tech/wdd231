@@ -4,19 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechPulse Electronics | Home & Store</title>
-  <meta name="description" content="Explore high-quality smartphones, laptops, and tech accessories at TechPulse Electronics. Best deals on modern gadgets.">
-  <meta name="author" content="Agoro Kelechi David">
-  
-  <!-- Integrated Favicon Reference -->
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
 
-  <!-- Open Graph Meta Tags -->
+  <!-- Required Meta & SEO Tags -->
+  <meta name="description" content="Explore high-quality smartphones, laptops, and tech accessories at TechPulse Electronics. Discover modern gadgets today.">
+  <meta name="author" content="Agoro Kelechi David">
+
+  <!-- Open Graph Social Sharing Tags -->
   <meta property="og:title" content="TechPulse Electronics - Modern Gadgets Hub">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Find modern gadgets, compare specs, and purchase genuine electronics.">
-  
+  <meta property="og:description" content="Find modern gadgets, compare specs, and purchase genuine electronics at TechPulse.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&auto=format&fit=crop">
+  <meta property="og:url" content="https://mekaycee-tech.github.io/wdd231/final/index.html">
+
+  <!-- Favicon Link -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Google Fonts API Preconnect and Link Tags -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <!-- External Local CSS Stylesheet -->
   <link rel="stylesheet" href="styles/style.css">
+
+  <!-- External JavaScript Module -->
   <script type="module" src="scripts/products.module.js"></script>
 </head>
 <body>
@@ -37,8 +48,8 @@
 
   <main>
     <section class="hero">
-      <h2>Welcome to TechPulse Electronics</h2>
-      <p>Discover the latest laptops, smartphones (Infinix, TECNO, Pixel, iPhone, Samsung), and tech accessories.</p>
+      <h1>TechPulse Electronics Store</h1>
+      <p>Discover the latest laptops, smartphones (Infinix, TECNO, Pixel, iPhone, Samsung), and accessories.</p>
     </section>
 
     <section class="controls">
@@ -53,14 +64,14 @@
     </section>
 
     <section class="product-grid" id="product-container">
-      <!-- Dynamic Products loaded via JS -->
+      <!-- Dynamic Products loaded via JavaScript -->
     </section>
 
-    <!-- Modal Dialog -->
+    <!-- Accessible Modal Dialog -->
     <dialog id="product-modal">
-      <h3 id="modal-title"></h3>
-      <p id="modal-category" style="font-weight: bold; color: var(--accent-color);"></p>
-      <p id="modal-description" style="margin: 1rem 0;"></p>
+      <h3 id="modal-title">Product Details</h3>
+      <p id="modal-category" class="category-tag"></p>
+      <p id="modal-description" class="modal-desc"></p>
       <p id="modal-price" class="price"></p>
       <button class="btn" id="close-modal-btn">Close</button>
     </dialog>
