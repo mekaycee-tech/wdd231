@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient for Dark Theme / Dark Mode -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070d14"/>
+      <stop offset="100%" stop-color="#0d1b2a"/>
+    </linearGradient>
+
+    <!-- Outer Ring Gradient: Electric Blue to Cyan -->
+    <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b4d8"/>
+      <stop offset="50%" stop-color="#0077b6"/>
+      <stop offset="100%" stop-color="#03045e"/>
+    </linearGradient>
+
+    <!-- Pulse Signal Gradient: Vibrant Cyan Glow -->
+    <linearGradient id="pulse-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#90e0ef"/>
+      <stop offset="50%" stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#7209b7"/>
+    </linearGradient>
+
+    <!-- Glowing Accent Gradient for Circuit Nodes -->
+    <linearGradient id="glow-node" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#48cae4"/>
+      <stop offset="100%" stop-color="#0077b6"/>
+    </linearGradient>
+
+    <!-- Text Gradient for "Tech" -->
+    <linearGradient id="text-tech-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0e1dd"/>
+    </linearGradient>
+
+    <!-- Text Gradient for "Pulse" -->
+    <linearGradient id="text-pulse-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00b4d8"/>
+      <stop offset="100%" stop-color="#90e0ef"/>
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Container Box with Rounded Corners -->
+  <rect width="800" height="240" rx="16" fill="url(#bg-grad)"/>
+
+  <!-- LOGO MARK / ICON GROUP -->
+  <g transform="translate(110, 120)">
+    <!-- Outer Tech Ring (Hex/Circle Fusion) -->
+    <circle r="72" fill="none" stroke="url(#ring-grad)" stroke-width="5" opacity="0.4"/>
+    
+    <!-- Outer Segmented Tech Accents -->
+    <circle r="72" fill="none" stroke="#00b4d8" stroke-width="6" stroke-dasharray="35 15 60 20 40 10" filter="url(#neon-glow)"/>
+    <circle r="82" fill="none" stroke="#90e0ef" stroke-width="2" stroke-dasharray="8 12 20 15" opacity="0.6"/>
+
+    <!-- Circuit Connection Dots & Traces -->
+    <line x1="-72" y1="0" x2="-55" y2="0" stroke="#00b4d8" stroke-width="2"/>
+    <line x1="55" y1="0" x2="72" y2="0" stroke="#00b4d8" stroke-width="2"/>
+    <circle cx="-55" cy="0" r="3.5" fill="url(#glow-node)"/>
+    <circle cx="55" cy="0" r="3.5" fill="url(#glow-node)"/>
+
+    <line x1="0" y1="-72" x2="0" y2="-55" stroke="#00b4d8" stroke-width="2"/>
+    <line x1="0" y1="55" x2="0" y2="72" stroke="#00b4d8" stroke-width="2"/>
+    <circle cx="0" cy="-55" r="3.5" fill="url(#glow-node)"/>
+    <circle cx="0" cy="55" r="3.5" fill="url(#glow-node)"/>
+
+    <!-- Inner Shield/Core Background -->
+    <circle r="52" fill="#0d1b2a" stroke="#0077b6" stroke-width="2"/>
+
+    <!-- Dynamic Heartbeat / Electrocardiogram / Power Pulse Line -->
+    <path d="M -42 0 L -22 0 L -14 -18 L -4 26 L 8 -32 L 20 16 L 28 -6 L 42 0" 
+          fill="none" 
+          stroke="url(#pulse-grad)" 
+          stroke-width="5" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          filter="url(#neon-glow)"/>
+
+    <!-- Glowing Heartbeat Peak Nodes -->
+    <circle cx="8" cy="-32" r="4" fill="#ffffff" filter="url(#neon-glow)"/>
+    <circle cx="-4" cy="26" r="3" fill="#90e0ef"/>
+  </g>
+
+  <!-- LOGO TEXT GROUP -->
+  <!-- "Tech" Brand Name -->
+  <text x="220" y="128" 
+        font-family="Montserrat, 'Segoe UI', Arial, sans-serif" 
+        font-weight="800" 
+        font-size="64" 
+        letter-spacing="1" 
+        fill="url(#text-tech-grad)">Tech</text>
+
+  <!-- "Pulse" Brand Name with Neon Glow -->
+  <text x="388" y="128" 
+        font-family="Montserrat, 'Segoe UI', Arial, sans-serif" 
+        font-weight="800" 
+        font-size="64" 
+        letter-spacing="1" 
+        fill="url(#text-pulse-grad)" 
+        filter="url(#neon-glow)">Pulse</text>
+
+  <!-- Tagline / Descriptor -->
+  <text x="222" y="165" 
+        font-family="Inter, 'Segoe UI', Arial, sans-serif" 
+        font-weight="600" 
+        font-size="16" 
+        letter-spacing="8" 
+        fill="#8d99ae">ELECTRONICS HUB</text>
+
+  <!-- Decorative Modern Accent Bar under Tagline -->
+  <rect x="222" y="178" width="60" height="3" rx="1.5" fill="#00b4d8" filter="url(#neon-glow)"/>
+  <rect x="287" y="178" width="12" height="3" rx="1.5" fill="#7209b7"/>
+</svg>

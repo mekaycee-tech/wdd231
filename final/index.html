@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechPulse Electronics | Home & Store</title>
+  <meta name="description" content="Explore high-quality smartphones, laptops, and tech accessories at TechPulse Electronics. Best deals on modern gadgets.">
+  <meta name="author" content="Agoro Kelechi David">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="TechPulse Electronics - Modern Gadgets Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Find modern gadgets, compare specs, and purchase genuine electronics.">
+  
+  <link rel="stylesheet" href="styles/style.css">
+  <script type="module" src="scripts/products.module.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <h1>TechPulse</h1>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to TechPulse Electronics</h2>
+      <p>Discover latest computing devices, accessories, and mobile hardware.</p>
+    </section>
+
+    <section class="controls">
+      <input type="text" id="search-input" placeholder="Search gadgets...">
+      <select id="category-filter">
+        <option value="All">All Categories</option>
+        <option value="Apple">Apple</option>
+        <option value="Android">Android</option>
+        <option value="Windows">Windows</option>
+        <option value="Accessories">Accessories</option>
+      </select>
+    </section>
+
+    <section class="product-grid" id="product-container">
+      <!-- Dynamic Products will be loaded here via JS -->
+    </section>
+
+    <!-- Modal Dialog structure for detailed info -->
+    <dialog id="product-modal">
+      <h3 id="modal-title"></h3>
+      <p id="modal-category" style="font-weight: bold; color: var(--accent-color);"></p>
+      <p id="modal-description" style="margin: 1rem 0;"></p>
+      <p id="modal-price" class="price"></p>
+      <button class="btn" id="close-modal-btn">Close</button>
+    </dialog>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mekaycee-Tech | Agoro Kelechi David</p>
+    <p><a href="attributions.html">Attributions & Sources</a></p>
+  </footer>
+
+</body>
+</html>

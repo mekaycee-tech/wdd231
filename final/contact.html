@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechPulse Electronics | Contact Us</title>
+  <meta name="description" content="Contact TechPulse support team for questions, device inquiries, or customer support.">
+  <meta name="author" content="Agoro Kelechi David">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  
+  <meta property="og:title" content="Contact TechPulse">
+  <meta property="og:type" content="website">
+  
+  <link rel="stylesheet" href="styles/style.css">
+  <script type="module">
+    // Menu Toggle
+    const ham = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('nav-menu');
+    ham.addEventListener('click', () => menu.classList.toggle('active'));
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <h1>TechPulse</h1>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">☰</button>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Contact Customer Support</h2>
+    <div class="form-container">
+      <!-- Form action redirects to thanks.html via GET parameters -->
+      <form action="thanks.html" method="get">
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Inquiry Type:</label>
+          <select id="subject" name="subject">
+            <option value="General Support">General Support</option>
+            <option value="Order Tracking">Order Tracking</option>
+            <option value="Product Return">Product Return</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Inquiry</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mekaycee-Tech | Agoro Kelechi David</p>
+    <p><a href="attributions.html">Attributions & Sources</a></p>
+  </footer>
+
+</body>
+</html>
